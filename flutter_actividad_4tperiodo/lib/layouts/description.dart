@@ -37,8 +37,34 @@ class _DescripcionState extends State<Descripcion> {
       color: Colors.black,
       child: PageFlipBuilder(
         flipAxis: Axis.horizontal,
-        frontBuilder: (_) => imagenFrond(),
-        backBuilder: (_) => imagenBack(),
+        frontBuilder: (_) => imagen("frond"),
+        backBuilder: (_) => imagen("back"),
+        onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)}),
+      ),
+    );
+  }
+
+  Container imagen(String direccion) {
+    int index = indexFrond;
+    flagFip = "frond";
+    print("frond");
+    return Container(
+      child: PageFlipBuilder(
+        flipAxis: Axis.vertical,
+        frontBuilder: (_) => Container(
+          decoration: BoxDecoration(
+            color: const Color(0xffFFECEF),
+            image: DecorationImage(
+                image: AssetImage(
+                    gallery[direccion == 'frond' ? indexFrond : indexBack]
+                        ['img']),
+                fit: BoxFit.cover),
+          ),
+        ),
+        backBuilder: (_) => Container(
+          child: Text(gallery[direccion == 'frond' ? indexFrond : indexBack]
+              ['descripcion']),
+        ),
         onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)}),
       ),
     );
@@ -47,7 +73,7 @@ class _DescripcionState extends State<Descripcion> {
   Container imagenFrond() {
     int index = indexFrond;
     flagFip = "frond";
-    // print("reload container frond");
+    print("frond");
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xffFFECEF),
@@ -59,7 +85,7 @@ class _DescripcionState extends State<Descripcion> {
 
   Container imagenBack() {
     flagFip = "back";
-    // print("reload container back");
+    print("back");
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xffFFECEF),
