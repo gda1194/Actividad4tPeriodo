@@ -16,14 +16,15 @@ class Descripcion extends StatefulWidget {
 
 class _DescripcionState extends State<Descripcion> {
   final pageFlipKey = GlobalKey<PageFlipBuilderState>();
-  int index = -1;
-  bool isFlagUpdate = false;
-  String flagDireccion = "izq";
-  bool isflagDireccion = true;
+  int indexFrond = -1;
+  int indexBack = -1;
+  String flagFip = "frond";
+
   @override
   Widget build(BuildContext context) {
     print("widget.des[index]" + widget.des.toString());
-    index = widget.des;
+    indexFrond = widget.des;
+    indexBack = widget.des + 1;
     return Container(
       child: contenedor(context),
     );
@@ -35,22 +36,34 @@ class _DescripcionState extends State<Descripcion> {
       color: Colors.black,
       child: PageFlipBuilder(
         flipAxis: Axis.horizontal,
-        frontBuilder: (_) => imagen("izq"),
-        backBuilder: (_) => imagen("der"),
-        onFlipComplete: (isFrontSide) => ({}),
+        frontBuilder: (_) => imagenFrond(),
+        backBuilder: (_) => imagenBack(),
+        onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)}),
       ),
     );
   }
 
-  Container imagen(String direccion) {
-    flagDireccion = direccion;
-    int index = flipIndex(direccion);
-    print("reload container " + direccion);
+  Container imagenFrond() {
+    int index = indexFrond;
+    flagFip = "frond";
+    // print("reload container frond");
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xffFFECEF),
         image: DecorationImage(
-            image: AssetImage(gallery[index]['img']), fit: BoxFit.cover),
+            image: AssetImage(gallery[indexFrond]['img']), fit: BoxFit.cover),
+      ),
+    );
+  }
+
+  Container imagenBack() {
+    flagFip = "back";
+    // print("reload container back");
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xffFFECEF),
+        image: DecorationImage(
+            image: AssetImage(gallery[indexBack]['img']), fit: BoxFit.cover),
       ),
     );
   }
@@ -60,39 +73,28 @@ class _DescripcionState extends State<Descripcion> {
       color: Colors.white,
       child: Center(
           child: Text(
-        gallery[index]['descripcion'],
+        gallery[indexFrond]['descripcion'],
         style: TextStyle(fontSize: 25),
       )),
     );
   }
 
   int newIndex(bool complete) {
-    // print('isFrontSide: $complete');
-    if (complete != isFlagUpdate) {
-      // print("Transicion completa " + flagDireccion);
-      isFlagUpdate = complete;
-      if (flagDireccion == 'izq') {
-        this.index = this.index - 1;
+    // Front true
+    // back false
+    if (complete) {
+      if (indexBack < gallery.length) {
+        indexBack = indexFrond + 1;
       } else {
-        this.index = this.index + 1;
-      }
-    }
-
-    // print("index " + index.toString());
-    return 1;
-  }
-
-  int flipIndex(String direccion) {
-    int index = this.index;
-    if (isFlagUpdate) {
-      if (direccion == "izq") {
-        index = index - 1;
-      } else {
-        index = index + 1;
+        indexBack = 0;
       }
     } else {
-      isFlagUpdate = true;
+      if (indexFrond < gallery.length) {
+        indexFrond = indexBack + 1;
+      } else {
+        indexFrond = 0;
+      }
     }
-    return index;
+    return 1;
   }
 }
