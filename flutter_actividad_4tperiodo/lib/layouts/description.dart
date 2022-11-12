@@ -65,32 +65,6 @@ class _DescripcionState extends State<Descripcion> {
           child: Text(gallery[direccion == 'frond' ? indexFrond : indexBack]
               ['descripcion']),
         ),
-        onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)}),
-      ),
-    );
-  }
-
-  Container imagenFrond() {
-    int index = indexFrond;
-    flagFip = "frond";
-    print("frond");
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xffFFECEF),
-        image: DecorationImage(
-            image: AssetImage(gallery[indexFrond]['img']), fit: BoxFit.cover),
-      ),
-    );
-  }
-
-  Container imagenBack() {
-    flagFip = "back";
-    print("back");
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xffFFECEF),
-        image: DecorationImage(
-            image: AssetImage(gallery[indexBack]['img']), fit: BoxFit.cover),
       ),
     );
   }
