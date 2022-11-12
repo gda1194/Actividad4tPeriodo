@@ -43,7 +43,7 @@ class _bodyState extends State<body> {
                                 context,
                                 PageTransition(
                                     child: Descripcion(
-                                      des: gallery[index],
+                                      des: index,
                                     ),
                                     type: PageTransitionType.fade));
                           },
