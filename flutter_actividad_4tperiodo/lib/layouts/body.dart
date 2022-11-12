@@ -27,7 +27,7 @@ class _bodyState extends State<body> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         childAspectRatio:  MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 1),
+                              (MediaQuery.of(context).size.height / 1.8),
                     ),
                     itemCount: gallery.length,
                     itemBuilder: (context, index) {
@@ -40,7 +40,7 @@ class _bodyState extends State<body> {
                             children: [
                               Center(
                                 child: Container(
-                                  width: 385,
+                                  width: 180,
                                   height: 200,
                                   decoration: BoxDecoration(
                                     color: const Color(0xffFFECEF),
