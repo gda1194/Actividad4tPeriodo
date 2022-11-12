@@ -60,7 +60,7 @@ const List gallery = [
         "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
   },
   {
-    "img": "assets/.jpg",
+    "img": "assets/dies.jpg",
     "descripcion":
         "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
   }
