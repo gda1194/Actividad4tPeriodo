@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Widget drawer() {
   return Drawer(
@@ -12,7 +13,7 @@ Widget drawer() {
             width: 1000,
             child: DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(236, 65, 201, 211),
               ),
               child: Text('Bienvenido:'),
             ),
@@ -30,7 +31,9 @@ Widget drawer() {
             Icons.logout,
           ),
           title: const Text('Salir'),
-          onTap: () {},
+          onTap: () {
+            SystemNavigator.pop();
+          },
         ),
       ],
     ),

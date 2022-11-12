@@ -10,7 +10,7 @@ Widget footer() {
   return Container(
     height: 50,
     decoration: BoxDecoration(
-      color: Color(0xff251B37),
+      color: Color.fromARGB(236, 65, 201, 211),
     ),
     child: Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
@@ -19,6 +19,7 @@ Widget footer() {
         children: List.generate(items.length, (index) {
           return IconButton(
             onPressed: () {},
+            color: Colors.white,
             icon: Icon(
               items[index],
             ),

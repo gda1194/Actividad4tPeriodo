@@ -26,48 +26,49 @@ class _bodyState extends State<body> {
         gallery.length > 1
             ? Expanded(
                 child: GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: MediaQuery.of(context).size.width /
-                          (MediaQuery.of(context).size.height / 1.8),
-                    ),
-                    itemCount: gallery.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 10.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    child: Descripcion(
-                                      des: index,
-                                    ),
-                                    type: PageTransitionType.fade));
-                          },
-                          child: Column(
-                            children: [
-                              Center(
-                                child: Container(
-                                  width: 180,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffFFECEF),
-                                    borderRadius: BorderRadius.circular(24),
-                                    image: DecorationImage(
-                                        image:
-                                            AssetImage(gallery[index]['img']),
-                                        fit: BoxFit.cover),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: MediaQuery.of(context).size.width /
+                        (MediaQuery.of(context).size.height / 1.8),
+                  ),
+                  itemCount: gallery.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 10.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: Descripcion(
+                                    des: index,
                                   ),
-                                ),
-                              ),
-                            ],
+                                  type:
+                                      PageTransitionType.leftToRightWithFade));
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25)),
+                          elevation: 8,
+                          child: Container(
+                            width: 180,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffFFECEF),
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                  image: AssetImage(gallery[index]['img']),
+                                  fit: BoxFit.cover),
+                            ),
                           ),
                         ),
-                      );
-                    }))
+                      ),
+                    );
+                  },
+                ),
+              )
             : const Center(
                 child: CircularProgressIndicator(),
               ),

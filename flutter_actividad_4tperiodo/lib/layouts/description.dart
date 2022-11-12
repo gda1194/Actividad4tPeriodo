@@ -1,6 +1,5 @@
 import 'dart:ffi';
 
-import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_actividad_4tperiodo/json/data.dart';
 import 'package:page_flip_builder/page_flip_builder.dart';
@@ -12,6 +11,8 @@ class Descripcion extends StatefulWidget {
 
   @override
   State<Descripcion> createState() => _DescripcionState();
+
+  
 }
 
 class _DescripcionState extends State<Descripcion> {
@@ -26,8 +27,11 @@ class _DescripcionState extends State<Descripcion> {
     print("widget.des[index]" + widget.des.toString());
     indexFrond = widget.des;
     indexBack = widget.des + 1;
-    return Container(
-      child: contenedor(context),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(236, 65, 201, 211),
+      ),
+      body: contenedor(context),
     );
   }
 
@@ -39,7 +43,7 @@ class _DescripcionState extends State<Descripcion> {
         flipAxis: Axis.horizontal,
         frontBuilder: (_) => imagen("frond"),
         backBuilder: (_) => imagen("back"),
-        onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)}),
+        onFlipComplete: (isFrontSide) => ({newIndex(isFrontSide)} ),
       ),
     );
   }
@@ -62,8 +66,11 @@ class _DescripcionState extends State<Descripcion> {
           ),
         ),
         backBuilder: (_) => Container(
-          child: Text(gallery[direccion == 'frond' ? indexFrond : indexBack]
-              ['descripcion']),
+          color: Colors.white,
+          child: Center(
+            child: Text(gallery[direccion == 'frond' ? indexFrond : indexBack]
+                ['descripcion'],  style: TextStyle(fontSize: 20),),
+          ),
         ),
       ),
     );
