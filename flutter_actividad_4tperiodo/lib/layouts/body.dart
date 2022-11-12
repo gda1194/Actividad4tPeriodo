@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_actividad_4tperiodo/json/data.dart';
+import 'package:flutter_actividad_4tperiodo/layouts/description.dart';
+import 'package:page_transition/page_transition.dart';
 
 class body extends StatefulWidget {
   const body({super.key});
@@ -9,12 +11,13 @@ class body extends StatefulWidget {
   @override
   State<body> createState() => _bodyState();
 }
+
 String path = gallery[1]['img'];
 String desc = gallery[1]['descripcion'];
+
 class _bodyState extends State<body> {
   @override
   Widget build(BuildContext context) {
-    
     debugPrint("longitud: $gallery");
     debugPrint("path: $path");
     debugPrint("Description: $desc");
@@ -25,9 +28,9 @@ class _bodyState extends State<body> {
                 child: GridView.builder(
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio:  MediaQuery.of(context).size.width /
-                              (MediaQuery.of(context).size.height / 1.8),
+                      crossAxisCount: 2,
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 1.8),
                     ),
                     itemCount: gallery.length,
                     itemBuilder: (context, index) {
@@ -35,7 +38,15 @@ class _bodyState extends State<body> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 8.0, horizontal: 10.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    child: Descripcion(
+                                      des: gallery[index],
+                                    ),
+                                    type: PageTransitionType.fade));
+                          },
                           child: Column(
                             children: [
                               Center(
@@ -64,4 +75,3 @@ class _bodyState extends State<body> {
     );
   }
 }
-
