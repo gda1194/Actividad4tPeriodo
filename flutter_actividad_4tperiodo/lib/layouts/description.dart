@@ -18,6 +18,7 @@ class _DescripcionState extends State<Descripcion> {
   final pageFlipKey = GlobalKey<PageFlipBuilderState>();
   int indexFrond = -1;
   int indexBack = -1;
+
   String flagFip = "frond";
 
   @override
@@ -83,13 +84,13 @@ class _DescripcionState extends State<Descripcion> {
     // Front true
     // back false
     if (complete) {
-      if (indexBack < gallery.length) {
+      if (indexFrond < gallery.length - 1) {
         indexBack = indexFrond + 1;
       } else {
         indexBack = 0;
       }
     } else {
-      if (indexFrond < gallery.length) {
+      if (indexBack < gallery.length - 1) {
         indexFrond = indexBack + 1;
       } else {
         indexFrond = 0;
