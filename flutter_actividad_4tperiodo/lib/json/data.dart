@@ -13,5 +13,55 @@ const List gallery = [
     "img": "assets/horse.jpg",
     "descripcion":
         "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/uno.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/dos.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/tres.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/cuatro.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/cinco.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/seis.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/siete.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/ocho.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/nueve.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
+  },
+  {
+    "img": "assets/.jpg",
+    "descripcion":
+        "Nullam in tortor ac libero lacinia suscipit non sit amet purus. Nunc vehicula pretium risus, vel aliquet ligula lacinia at. Pellentesque congue, nunc in efficitur laoreet, erat elit efficitur purus, nec imperdiet lacus sem sit amet nisl."
   }
 ];
