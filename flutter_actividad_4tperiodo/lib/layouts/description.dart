@@ -2,9 +2,9 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
 class Descripcion extends StatefulWidget {
-  final dynamic img;
+  final dynamic des;
 
-  Descripcion({Key? key, this.img}) : super(key: key);
+  Descripcion({Key? key, this.des}) : super(key: key);
 
   @override
   State<Descripcion> createState() => _DescripcionState();
@@ -17,7 +17,7 @@ class _DescripcionState extends State<Descripcion> {
       child: FlipCard(
         fill: Fill.fillBack,
         direction: FlipDirection.HORIZONTAL,
-        front: Container(child: ,),
+        front: Container(),
         back: Container(),
       ),
     );
