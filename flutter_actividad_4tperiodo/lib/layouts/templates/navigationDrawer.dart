@@ -4,10 +4,8 @@ import 'package:flutter/services.dart';
 Widget drawer() {
   return Drawer(
     child: ListView(
-      // Important: Remove any padding from the ListView.
       padding: EdgeInsets.zero,
       children: [
-        // ignore: prefer_const_literals_to_create_immutables
         Column(children: [
           const SizedBox(
             width: 1000,

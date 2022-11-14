@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flip_board/flip_board.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_actividad_4tperiodo/json/data.dart';
 import 'package:flutter_actividad_4tperiodo/layouts/description.dart';
@@ -48,21 +49,14 @@ class _bodyState extends State<body> {
                                   type:
                                       PageTransitionType.leftToRightWithFade));
                         },
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25)),
-                          elevation: 8,
-                          child: Container(
-                            width: 180,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffFFECEF),
-                              borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
-                                  image: AssetImage(gallery[index]['img']),
-                                  fit: BoxFit.cover),
-                            ),
-                          ),
+                        child: Container(
+                          child: FlipMatrixBoardSingleChild.assetImage(
+                              imageName: gallery[index]['img'],
+                              axis: Axis.vertical,
+                              width: 175,
+                              height: 200,
+                              columnCount: 5,
+                              rowCount: 5),
                         ),
                       ),
                     );
