@@ -69,8 +69,8 @@ class _DescripcionState extends State<Descripcion> {
                 height: 10,
               ),
               Container(
-                height: 275,
-                width: 250,
+                height: 350,
+                width: 300,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
@@ -79,11 +79,19 @@ class _DescripcionState extends State<Descripcion> {
                         ),
                         fit: BoxFit.cover)),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Center(
-                child: Text(
-                  gallery[direccion == 'frond' ? indexFrond : indexBack]
+                child: Text("Descripción: ",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Center(
+                child: Text(                  gallery[direccion == 'frond' ? indexFrond : indexBack]
                       ['descripcion'],
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic, fontWeight: FontWeight.w400),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -91,17 +99,6 @@ class _DescripcionState extends State<Descripcion> {
           ),
         ),
       ),
-    );
-  }
-
-  Container descripcion() {
-    return Container(
-      color: Colors.white,
-      child: Center(
-          child: Text(
-        gallery[indexFrond]['descripcion'],
-        style: TextStyle(fontSize: 25),
-      )),
     );
   }
 
