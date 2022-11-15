@@ -8,4 +8,4 @@ Librerías empleadas:
 
 Estudiantes:
 - Ayala Ayala, Gerson David 25-0900-2018
--Rojas Guido, Jonathan Orlando 25-4763-2016
+- Rojas Guido, Jonathan Orlando 25-4763-2016
