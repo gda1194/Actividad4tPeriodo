@@ -84,6 +84,7 @@ class _DescripcionState extends State<Descripcion> {
                   gallery[direccion == 'frond' ? indexFrond : indexBack]
                       ['descripcion'],
                   style: TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],
